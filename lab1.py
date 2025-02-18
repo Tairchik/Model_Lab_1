@@ -1,77 +1,58 @@
 import numpy as np
-import scipy.stats as stats
-import matplotlib.pyplot as plt
 
-# Параметры
-a = 2  # Среднее
-sigma = 1  # Стандартное отклонение
-n = 100  # Размер выборки
 
-# Генерация первой выборки с использованием центральной предельной теоремы
-sample1 = np.random.normal(loc=a, scale=sigma, size=n)
+# ЦПТ
+def generate_normal_central_limit(n, size, a=0, sigma=1):
+    uniform_samples = []
+    # Генерация и подсчет суммы чисел. Генерация по n чисел из выборки size
+    for _ in range(size):
+        uniform_sum = sum(np.random.uniform(0, 1, n)) 
+        uniform_samples.append(uniform_sum)
+    normal_samples = (np.array(uniform_samples) - n / 2) / np.sqrt(n / 12)
+    return a + sigma * normal_samples  # Приведение к N(2,1)
 
-# Генерация второй выборки с использованием метода Бокса-Маллера
-Xn = np.random.uniform(0, 1, n//2)
-Xn1 = np.random.uniform(0, 1, n//2)
 
-Y1 = np.sqrt(-2 * np.log(Xn)) * np.cos(2 * np.pi * Xn1)
-Y2 = np.sqrt(-2 * np.log(Xn)) * np.sin(2 * np.pi * Xn1)
+# Бокс-Маллера
+def generate_normal_box_muller(size, a=0, sigma=1):
+    # Два числа с равномерным распределением в интервале (0, 1)
+    x1 = np.random.uniform(0, 1, size // 2)
+    x2 = np.random.uniform(0, 1, size // 2)
 
-sample2 = a + sigma * np.concatenate((Y1, Y2))
+    # Коэффициенты для пары yn и yn+1
+    r = (-2 * np.log(x1)) ** 0.5
+    theta = 2 * np.pi * x2
 
-# Проведение t-теста
-t_stat, p_value = stats.ttest_ind(sample1, sample2)
+    # Пара некоррелированных, нормально распределённых случайных чисел
+    y1 = r * np.cos(theta)
+    y2 = r * np.sin(theta) 
 
-# Визуализация
-fig, axs = plt.subplots(3, 1, figsize=(10, 15))
+    # Объеденили
+    normal_samples = np.concatenate((y1, y2))[:size]
 
-# Гистограмма первой выборки
-axs[0].hist(sample1, bins=20, alpha=0.5, color='blue', density=True, label='Выборка 1 (ЦПТ)')
-axs[0].set_title('Выборка 1 (ЦПТ)')
-axs[0].set_xlabel('Значения')
-axs[0].set_ylabel('Плотность вероятности')
-axs[0].legend()
-axs[0].grid()
+    return a + sigma * normal_samples  # Приведение к N(2,1)
 
-# Плотность распределения для первой выборки
-xmin, xmax = axs[0].get_xlim()
-x = np.linspace(xmin, xmax, 100)
-p1 = stats.norm.pdf(x, a, sigma)
-axs[0].plot(x, p1, 'b', linewidth=2)
 
-# Гистограмма второй выборки
-axs[1].hist(sample2, bins=20, alpha=0.5, color='orange', density=True, label='Выборка 2 (Бокс-Маллера)')
-axs[1].set_title('Выборка 2 (Бокс-Маллера)')
-axs[1].set_xlabel('Значения')
-axs[1].set_ylabel('Плотность вероятности')
-axs[1].legend()
-axs[1].grid()
+# Критерий Пирсона
+def pearson_chi_square_test(sample, bins=10, mean=2, sigma=1):
+    hist, bin_edges = np.histogram(sample, bins=bins)
+    bin_widths = np.diff(bin_edges)
+    expected_freq = []
+    for i in range(len(bin_edges) - 1):
+        exp_freq = (np.exp(-0.5 * ((bin_edges[i] - mean) / sigma) ** 2) / (
+            sigma * np.sqrt(2 * np.pi))) * bin_widths[i] * len(sample)
+        expected_freq.append(exp_freq)
+    chi_square_stat = np.sum((hist - expected_freq) ** 2 / expected_freq)
+    return chi_square_stat
 
-# Плотность распределения для второй выборки
-p2 = stats.norm.pdf(x, a, sigma)
-axs[1].plot(x, p2, 'orange', linewidth=2)
 
-# Совместная гистограмма
-axs[2].hist(sample1, bins=20, alpha=0.5, color='blue', density=True, label='Выборка 1 (ЦПТ)')
-axs[2].hist(sample2, bins=20, alpha=0.5, color='orange', density=True, label='Выборка 2 (Бокс-Маллера)')
-axs[2].set_title('Совместная гистограмма')
-axs[2].set_xlabel('Значения')
-axs[2].set_ylabel('Плотность вероятности')
-axs[2].legend()
-axs[2].grid()
+# Генерация выборок
+size = 1000
+sample_clt = generate_normal_central_limit(12, size, 2, 1)
+sample_box_muller = generate_normal_box_muller(size)
 
-# Общий заголовок
-plt.suptitle('Сравнение двух выборок', fontsize=16)
-plt.tight_layout(rect=[0, 0, 1, 0.96])  # Увеличиваем пространство для общего заголовка
-plt.show()
+# Проверка критерием Пирсона
+chi_square_clt = pearson_chi_square_test(sample_clt)
+chi_square_box_muller = pearson_chi_square_test(sample_box_muller)
 
-# Вывод результатов t-теста
-print(f"t-статистика: {t_stat}")
-print(f"p-значение: {p_value}")
-
-# Уровень значимости
-alpha = 0.05
-if p_value < alpha:
-    print("Отвергаем нулевую гипотезу: выборки принадлежат разным генеральным совокупностям.")
-else:
-    print("Не отвергаем нулевую гипотезу: выборки могут принадлежать одной и той же генеральной совокупности.")
+print("Пирсон CLT:", chi_square_clt)
+print("Пирсон Box-Muller:", chi_square_box_muller)
