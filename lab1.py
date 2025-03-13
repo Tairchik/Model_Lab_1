@@ -1,19 +1,21 @@
 import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, chi2
 
 
 # ЦПТ
-def generate_normal_central_limit(n, size, a=0, sigma=1):
+def generate_normal_central_limit(n, size, a=2, sigma=1):
     uniform_samples = []
     # Генерация и подсчет суммы чисел. Генерация по n чисел из выборки size
     for _ in range(size):
-        uniform_sum = sum(np.random.uniform(0, 1, n)) 
+        uniform_sum = np.sum(np.random.uniform(0, 1, n))
         uniform_samples.append(uniform_sum)
     normal_samples = (np.array(uniform_samples) - n / 2) / np.sqrt(n / 12)
     return a + sigma * normal_samples  # Приведение к N(2,1)
 
 
 # Бокс-Маллера
-def generate_normal_box_muller(size, a=0, sigma=1):
+def generate_normal_box_muller(size, a=2, sigma=1):
     # Два числа с равномерным распределением в интервале (0, 1)
     x1 = np.random.uniform(0, 1, size // 2)
     x2 = np.random.uniform(0, 1, size // 2)
@@ -24,35 +26,134 @@ def generate_normal_box_muller(size, a=0, sigma=1):
 
     # Пара некоррелированных, нормально распределённых случайных чисел
     y1 = r * np.cos(theta)
-    y2 = r * np.sin(theta) 
+    y2 = r * np.sin(theta)
 
-    # Объеденили
+    # Объеденили массивы yn и yn+1
     normal_samples = np.concatenate((y1, y2))[:size]
 
     return a + sigma * normal_samples  # Приведение к N(2,1)
 
 
-# Критерий Пирсона
-def pearson_chi_square_test(sample, bins=10, mean=2, sigma=1):
-    hist, bin_edges = np.histogram(sample, bins=bins)
-    bin_widths = np.diff(bin_edges)
-    expected_freq = []
-    for i in range(len(bin_edges) - 1):
-        exp_freq = (np.exp(-0.5 * ((bin_edges[i] - mean) / sigma) ** 2) / (
-            sigma * np.sqrt(2 * np.pi))) * bin_widths[i] * len(sample)
-        expected_freq.append(exp_freq)
-    chi_square_stat = np.sum((hist - expected_freq) ** 2 / expected_freq)
-    return chi_square_stat
+def empirical_cdf(sample, x):
+    """Вычисляет эмпирическую функцию распределения (ЭФР)"""
+    return np.sum(sample <= x) / len(sample)
+
+
+def smirnov_test_manual(sample1, sample2):
+    sample1 = np.sort(sample1)
+    sample2 = np.sort(sample2)
+
+    # Объединяем все значения из двух выборок
+    combined = np.sort(np.concatenate((sample1, sample2)))
+
+    # Вычисляем разности ЭФР для всех значений
+    d_max = 0
+    for x in combined:
+        f1 = empirical_cdf(sample1, x)
+        f2 = empirical_cdf(sample2, x)
+        d_max = max(d_max, abs(f1 - f2))
+
+    # Оценка критического значения для уровня значимости 0.05
+    n1, n2 = len(sample1), len(sample2)
+    critical_value = np.sqrt(abs(np.log(0.05) * (1/n1 + 1/n2) / 2))
+    # Приближенная формула
+
+    # Проверка гипотезы
+    if d_max < critical_value:
+        result = "Выборки принадлежат одной генеральной совокупности"
+    else:
+        result = "Выборки НЕ принадлежат одной генеральной совокупности"
+
+    return d_max, critical_value, result
+
+
+def my_chi(ran_nums: np.ndarray, bins, mean=2, sigma=1):
+    # Определяем min и max
+    min_val, max_val = np.min(ran_nums), np.max(ran_nums)
+
+    # Определяем ширину интервала
+    bin_width = (max_val - min_val) / bins
+
+    # Создаём границы интервалов
+    bin_edges = [min_val + i * bin_width for i in range(bins + 1)]
+
+    # Подсчёт количества значений в каждом интервале
+    bin_counts = [0] * bins  # Создаём массив для хранения количества элементов
+    for value in ran_nums:
+        for i in range(bins):
+            # Проверяем, попадает ли значение в интервал
+            if bin_edges[i] <= value < bin_edges[i + 1]:
+                bin_counts[i] += 1
+                break
+    # Добавляем значения в последний интервал
+    bin_counts[-1] += int(np.size(ran_nums) - np.sum(bin_counts))
+
+    chi = 0
+    N = np.size(ran_nums)
+    for i in range(bins):
+        P = norm.cdf(bin_edges[i+1], loc=mean, scale=sigma) - \
+            norm.cdf(bin_edges[i], loc=mean, scale=sigma)
+        chi += (bin_counts[i] - P * N)**2 / (P * N)
+    k = bins - 3
+    alpha = 0.05
+    y = chi2.ppf(1 - alpha, k)
+    if chi < y:
+        return chi, "Прошел проверку"
+    else:
+        return chi, "Не прошел проверку"
+    
+
+def f(sample, bins=10):
+    # Определяем min и max
+    min_val, max_val = min(sample), max(sample)
+
+    # Определяем ширину интервала
+    bin_width = (max_val - min_val) / bins
+
+    # Создаём границы интервалов
+    bin_edges = [min_val + i * bin_width for i in range(bins + 1)]
+
+    # Подсчёт количества значений в каждом интервале
+    bin_counts = [0] * bins  # Создаём массив для хранения количества элементов
+    for value in sample:
+        for i in range(bins):
+            # Проверяем, попадает ли значение в интервал
+            if bin_edges[i] <= value < bin_edges[i + 1]:
+                bin_counts[i] += 1
+                break
+    # Добавляем значения в последний интервал
+    bin_counts[-1] += sum(sample >= bin_edges[-2])
+    return bin_edges, bin_counts, bin_width
+
+
+# Создаем гистограмму
+def manual_histogram(sample1, sample2, bins=10):
+    bin_edges, bin_counts, bin_width = f(sample1, bins)
+    bin_edges1, bin_counts1, bin_width1 = f(sample2, bins)
+    d_max, critical_value, result = smirnov_test_manual(sample1, sample2)
+    # Строим гистограмму
+    plt.bar(bin_edges[:-1], bin_counts, width=bin_width,
+            edgecolor="black", alpha=1, label="ЦПТ")
+    plt.bar(bin_edges1[:-1], bin_counts1, width=bin_width1,
+            edgecolor="black", alpha=0.7, label="Бокс-Маллер")
+    plt.xlabel("Значение")
+    plt.ylabel("Частота")
+    plt.title("Гистограмма")
+    plt.legend()
+    info_text = f"{result}\nКритическое значение: {critical_value:.5f}\nТеоритическое значение: {d_max:.5f}"
+    plt.gcf().text(0.15, 0.75, info_text, fontsize=10, 
+                   bbox=dict(facecolor='white', alpha=0.5))
+
+    plt.show()
 
 
 # Генерация выборок
-size = 1000
+size = 10000
 sample_clt = generate_normal_central_limit(12, size, 2, 1)
-sample_box_muller = generate_normal_box_muller(size)
+sample_box_muller = generate_normal_box_muller(size, 2, 1)
 
-# Проверка критерием Пирсона
-chi_square_clt = pearson_chi_square_test(sample_clt)
-chi_square_box_muller = pearson_chi_square_test(sample_box_muller)
+# Проверка критерием Пирсонаchi_squareclt = pearson_chi_square_test(sample_clt)
 
-print("Пирсон CLT:", chi_square_clt)
-print("Пирсон Box-Muller:", chi_square_box_muller)
+# print(pearson_chi_square_test(sample_clt))
+
+manual_histogram(sample_clt, sample_box_muller, 20)
