@@ -111,13 +111,42 @@ def manual_histogram(sample1, sample2, bins=10):
     plt.show()
 
 
-# Генерация выборок
-size = 10000
-sample_clt = generate_normal_central_limit(12, size, 2, 1)
-sample_box_muller = generate_normal_box_muller(size, 2, 1)
+def console():
+    while True:
+        Info()
+        c = input(">")
+        if c == '1':
+            size = int(input("Введите размер выборки: "))
+            n = int(input("Введите количество чисел для ЦПТ: "))
+            sample_clt = generate_normal_central_limit(n, size, 2, 1)
+            sample_box_muller = generate_normal_box_muller(size, 2, 1)
+            bins = int(input("Введите количество интервалов: "))
+            manual_histogram(sample_clt, sample_box_muller, bins)
+        elif c == '2':
+            print("Меню")
+            print("1. Изменить с сохранением выборки")
+            print("2. Изменить без сохранения выборки")
+            print("3. Выход")
+            s = input(">")
+            if s == '1':
+                bins = int(input("Введите количество интервалов: "))
+                manual_histogram(sample_clt, sample_box_muller, bins)
+            elif s == '2':
+                size = int(input("Введите размер выборки: "))
+                n = int(input("Ввыедите количество чисел для ЦПТ: "))
+                sample_clt = generate_normal_central_limit(n, size, 2, 1)
+                sample_box_muller = generate_normal_box_muller(size, 2, 1)
+                bins = int(input("Введите количество интервалов: "))
+                manual_histogram(sample_clt, sample_box_muller, bins)
+        else:
+            break
 
-# Проверка критерием Пирсонаchi_squareclt = pearson_chi_square_test(sample_clt)
 
-# print(pearson_chi_square_test(sample_clt))
+def Info():
+    print("Меню действий")
+    print("1. Создать выборку")
+    print("2. Изменить значения")
+    print("3. Выход")
 
-manual_histogram(sample_clt, sample_box_muller, 200)
+#как будет влиять по цпт с разными распределенями
+console()
