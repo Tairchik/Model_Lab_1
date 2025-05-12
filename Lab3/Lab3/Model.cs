@@ -1,20 +1,11 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-
-namespace Lab3
+﻿namespace Lab3
 {
     internal class Model
     {
         private List<Clerk> workers; // Клерки за кассой 
         private int time = 480; // Время имитационной модели 
         private float mean = 2; // Математическое ожидание
-        private int N = 50; // Число реализующих в интервале от 50 до 100
-        private List<float> middle_wait_time; // Для подсчета среднего времени ожидания 
+        private int N = 100; // Число реализующих в интервале от 50 до 100
         private int num_workers; // Число клерков
         private int N_new = 0;
 
@@ -41,8 +32,7 @@ namespace Lab3
                 for (int p = 0; p < N; p++)
                 {
                     // Случайное время прихода
-                    float tao = Rand_stats.GetExponentialRandom(mean);
-                    middle_wait_time = new List<float>();
+                    float tao = RandValue.GetExponentialRandom(mean);
                     workers = new List<Clerk>();
                     List<Customer> customers = new List<Customer>();
 
@@ -62,7 +52,7 @@ namespace Lab3
                         Customer customer = new Customer();
                         customer.enter = time_counter;
                         customers.Add(customer);
-                        tao = Rand_stats.GetExponentialRandom(mean);
+                        tao = RandValue.GetExponentialRandom(mean);
                         time_counter += tao;
                     }
 
@@ -128,17 +118,19 @@ namespace Lab3
                                     {
                                         clerk.customers_queue.Dequeue();
                                     }
+
+                                    clerk.count_customers.Add(count_customers_service);
                                 }
                             }
                             // Клерк в готовности обслужить новых клиентов
                             if (clerk.service_time == 0 && clerk.customers_queue.Count > 0)
                             {
-                                int count_customer_service = clerk.customers_queue.Count > 6 ? 6 : clerk.customers_queue.Count; 
-                                float time_go_to = Rand_stats.GetRandomFloat(0.5f, 1.5f); // Время пути к складу 
-                                float time_go_back = Rand_stats.GetRandomFloat(0.5f, 1.5f); // Время пути к кассе
+                                int count_customer_service = clerk.customers_queue.Count >= 6 ? 6 : clerk.customers_queue.Count; 
+                                float time_go_to = RandValue.GetRandomFloat(0.5f, 1.5f); // Время пути к складу 
+                                float time_go_back = RandValue.GetRandomFloat(0.5f, 1.5f); // Время пути к кассе
                                                                                             // Время обслуживания
-                                float time_service = Rand_stats.Normal(3 * count_customer_service, 0.2f * count_customer_service);
-                                float time_calculation = Rand_stats.GetRandomFloat(1f, 3f); // Время расчета 
+                                float time_service = RandValue.Normal(3 * count_customer_service, 0.2f * count_customer_service);
+                                float time_calculation = RandValue.GetRandomFloat(1f, 3f); // Время расчета 
 
                                 clerk.service_time = time_go_to + time_service + time_go_back + time_calculation;
 
@@ -147,13 +139,20 @@ namespace Lab3
                                 {
                                     clerk.customers_service.Add(clerk.customers_queue.ElementAt(i));
                                 }
-                                clerk.count_customers.Add(count_customer_service);
                             }
                         }
                         time_counter += deltaT;
                     }
 
-                    middle_wait[p] = workers.Sum(c => c.middle_wait_time.Sum()) / workers.Sum(c => c.middle_wait_time.Count);
+                    float result_middle_wait_time = 0;
+                    foreach (var clerk in workers)
+                    {
+                        result_middle_wait_time += clerk.middle_wait_time.Sum() / clerk.middle_wait_time.Count;
+                    }
+                    result_middle_wait_time /= num_workers;
+
+
+                    middle_wait[p] = result_middle_wait_time;
 
                     Console.WriteLine(GetStatisticByOneClerk());
                     Console.WriteLine();
@@ -184,13 +183,23 @@ namespace Lab3
         }
         public string GetStatisticByOneClerk() 
         {
+            float middle_count_customers = 0;
+            float middle_wait_time = 0;
+            foreach (var clerk in workers)
+            {
+                middle_wait_time += (float) clerk.middle_wait_time.Sum() / clerk.middle_wait_time.Count;
+                middle_count_customers += (float) clerk.count_customers.Sum() / clerk.count_customers.Count;
+            }
+            middle_wait_time /= workers.Count;
+            middle_count_customers /= workers.Count;
+
             return $"""
                 Показатели эффективности
                 Общее количество выполненных заказов: {workers.Sum(c => c.count_service)}
                 Средняя загрузка клерков в часах: {workers.Sum(c => c.time_work) / workers.Count / 60}
                 Средняя загрузка клерков в % от общего времени работы: {workers.Sum(c => c.time_work) / (workers.Count * time) * 100}
-                Среднее число заявок, выполняемых за один выход в склад: {workers.Sum(c => c.count_customers.Sum()) / workers.Sum(c => c.count_customers.Count)}
-                Среднее время ожидания клиентом выполнения заказа: {workers.Sum(c => c.middle_wait_time.Sum()) / workers.Sum(c => c.middle_wait_time.Count)}
+                Среднее число заявок, выполняемых за один выход в склад: {middle_count_customers}
+                Среднее время ожидания клиентом выполнения заказа: {middle_wait_time}
                 """;
         }
 

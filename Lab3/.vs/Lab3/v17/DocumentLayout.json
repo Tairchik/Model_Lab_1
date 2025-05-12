@@ -1,33 +1,29 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\",
+  "WorkspaceRootPath": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\randvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\randvalue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\rand_stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\rand_stats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\clerk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\clerk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\clerk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\lab3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\lab3\\lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|c:\\\u0434\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u043B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\lab3\\lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{C645D335-C55C-45A4-ABD1-F7CACDB2526D}|Lab3\\Lab3.csproj|solutionrelative:lab3\\lab3.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -56,24 +52,24 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Model.cs",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Model.cs",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Model.cs",
               "RelativeDocumentMoniker": "Lab3\\Model.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Model.cs",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Model.cs",
               "RelativeToolTip": "Lab3\\Model.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAADEAAAAAAAAAAAAAwKwAAABXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T03:26:12.46Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Rand_stats.cs",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Rand_stats.cs",
-              "RelativeDocumentMoniker": "Lab3\\Rand_stats.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Rand_stats.cs",
-              "RelativeToolTip": "Lab3\\Rand_stats.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwCUAAABRAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "RandValue.cs",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\RandValue.cs",
+              "RelativeDocumentMoniker": "Lab3\\RandValue.cs",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\RandValue.cs",
+              "RelativeToolTip": "Lab3\\RandValue.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAiwCoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T03:02:27.135Z"
             },
@@ -81,35 +77,48 @@
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Customer.cs",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Customer.cs",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Customer.cs",
               "RelativeDocumentMoniker": "Lab3\\Customer.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Customer.cs",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Customer.cs",
               "RelativeToolTip": "Lab3\\Customer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-11T03:01:34.431Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Lab3",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Lab3.csproj",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Lab3.csproj",
               "RelativeDocumentMoniker": "Lab3\\Lab3.csproj",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Lab3.csproj",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Lab3.csproj",
               "RelativeToolTip": "Lab3\\Lab3.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-05-11T03:03:51.754Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Form1.cs",
-              "RelativeDocumentMoniker": "Lab3\\Form1.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "Lab3\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Program.cs",
+              "RelativeDocumentMoniker": "Lab3\\Program.cs",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Program.cs",
+              "RelativeToolTip": "Lab3\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T02:43:32.419Z"
+              "WhenOpened": "2025-05-11T04:20:12.803Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Clerk.cs",
+              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Clerk.cs",
+              "RelativeDocumentMoniker": "Lab3\\Clerk.cs",
+              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\\u041B\u0430\u0431\u043E\u0440\u0430\u0442\u043E\u0440\u043D\u044B\u0435\\Lab3\\Lab3\\Clerk.cs",
+              "RelativeToolTip": "Lab3\\Clerk.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-11T03:03:01.696Z"
             }
           ]
         },
@@ -120,52 +129,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "d20f8298-4021-4d41-8561-1ff219bd46e6",
-        "Display": 0,
-        "X": -5,
-        "Y": 315,
-        "Width": 1512,
-        "Height": 722,
-        "WindowState": 2
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Program.cs",
-              "RelativeDocumentMoniker": "Lab3\\Program.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Program.cs",
-              "RelativeToolTip": "Lab3\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T04:20:12.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Clerk.cs",
-              "DocumentMoniker": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Clerk.cs",
-              "RelativeDocumentMoniker": "Lab3\\Clerk.cs",
-              "ToolTip": "C:\\\u0414\u043E\u043C\u0430\u0448\u043A\u0430\\\u043C\u043E\u0434\u0435\u043B\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435\\Lab3\\Lab3\\Clerk.cs",
-              "RelativeToolTip": "Lab3\\Clerk.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-11T03:03:01.696Z"
             }
           ]
         }

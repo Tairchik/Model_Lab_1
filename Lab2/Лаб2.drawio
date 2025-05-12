@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2025-04-14T12:10:04.100Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="Pw29ShamnLiXrSoT3I0X" version="23.1.5" type="device">
+<mxfile host="Electron" modified="2025-05-12T06:32:52.297Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/23.1.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="LqaiV5glYTIteQz8jPcO" version="23.1.5" type="device">
   <diagram name="Страница — 1" id="2xf0zdHDKTg9vqtkdUgH">
-    <mxGraphModel dx="3787" dy="1734" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2554" dy="1012" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -108,7 +108,7 @@
         <mxCell id="9KOpK2-u_YjPfHabHejo-34" value="Х&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;вх&lt;/sub&gt;&lt;span style=&quot;&quot;&gt;=1&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Times New Roman;" parent="1" vertex="1">
           <mxGeometry x="220" y="840" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z-j3Qhin0witb1v5EF3L-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="9KOpK2-u_YjPfHabHejo-35">
+        <mxCell id="Z-j3Qhin0witb1v5EF3L-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="9KOpK2-u_YjPfHabHejo-35" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="280" y="880" as="targetPoint" />
             <Array as="points">

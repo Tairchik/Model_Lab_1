@@ -8,7 +8,7 @@ namespace Lab3
         //[STAThread]
         static void Main()
         {
-            Model model = new Model(2);
+            Model model = new Model(3);
 
             model.StartModel();
         }

@@ -9,6 +9,5 @@ namespace Lab3
     internal class Customer
     {
         public float enter;     // Время прихода
-        public float exit;      // Время выхода
     }
 }

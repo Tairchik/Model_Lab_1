@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Домашка\\моделирование\\Lab3\\Lab3\\Lab3.csproj",
+      "projectUniqueName": "C:\\Домашка\\моделирование\\Лабораторные\\Lab3\\Lab3\\Lab3.csproj",
       "projectName": "Lab3",
-      "projectPath": "C:\\Домашка\\моделирование\\Lab3\\Lab3\\Lab3.csproj",
+      "projectPath": "C:\\Домашка\\моделирование\\Лабораторные\\Lab3\\Lab3\\Lab3.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Домашка\\моделирование\\Lab3\\Lab3\\obj\\",
+      "outputPath": "C:\\Домашка\\моделирование\\Лабораторные\\Lab3\\Lab3\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
